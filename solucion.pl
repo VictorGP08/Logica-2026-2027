@@ -10,7 +10,7 @@
 %  @param +Correo: Correo electrónico institucional.
 %  @param +Grado:  Grado del alumno (Ciber | IA).
 
-alumno('Joan Clarke', 'j.clarke.2026@alumnos.urjc.es', 'Ciber').
+alumno('Víctor Gómez Peña', 'v.gomezp.2026@alumnos.urjc.es', 'Ciber').
 
 %% Ejemplo alumno de IA
 % alumno('John McCarthy', 'j.mccarthy.2026@alumnos.urjc.es', 'IA').
@@ -29,13 +29,96 @@ proof(ejercicio01,
       ]).
 
 proof(ejercicio02,
-      [
-          % Completar con la demostración
-      ]).
+        [
+            !p --> q and !q
+        ],
+        p,
+        [
+            'Premisa'(1),
+            'I' ! (1),
+            'E' ! (2)
+        ]).
+
+proof (
+proof (
+proof (ejercicio5 :-
+    main(
+        [
+            p --> q or r,
+            !q,
+            !r
+        ],
+        !p,
+        [
+            'Premisa'(1),
+            'Premisa'(2),
+            'Premisa'(3),
+            'Supuesto'(p),
+            'E' --> (1, 4),
+            'Supuesto'(q),
+            'I' and (6,2),
+            'Supuesto'(p),
+            'I' --> ( 8,7),
+            'I' !(9),
+            'I' and (4,10),
+            'I' --> (6,11),
+            'Supuesto'(r),
+            'I' and (13,3),
+            'Supuesto'(p),
+            'I' --> ( 15,14),
+            'I' !(16),
+            'I' and (4,17),
+            'I' --> (13,18),
+            'E' or (5,12,19),
+            'I' --> (4,20),
+            'I'!(21) 
+            
+        ]
+    ).
+proof (ejercicio6 :-
+    main(
+        [
+           p and q --> r
+        ],
+        p and !r --> !q,
+        [
+            'Premisa'(1),
+            'Supuesto'(p and !r),
+            'E' and a(2),
+            'E' and b(2),
+            'Supuesto'(q),
+            'I' and (3,5),
+            'E'-->(1,6),
+            'I' and (4,7),
+            'I' --> (5,8),
+            'I' ! (9),
+            'I' -->(2,10)
+        ]
+    ).
+proof (
+proof (
+proof (
+proof (
+          
 
 
 % Incluir el resto de demostraciones
-
+rule( 'MT',
+      [
+          FA --> FB,
+          !FB
+      ],
+      !FA,
+      [
+          'Premisa'(1),
+          'Premisa'(2),
+          'Supuesto'(FA),
+          'E' --> (1, 3),
+          'I' and (4, 2),
+          'I' --> (3, 5),    
+          'I' ! (6)
+      ]
+    ).
 
 
 %% Incluir reglas derivadas con el predicado rule/4    
